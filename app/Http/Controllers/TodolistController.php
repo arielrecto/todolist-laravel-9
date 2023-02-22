@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Todolist;
 
 class TodolistController extends Controller
 {
@@ -34,7 +35,11 @@ class TodolistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Todolist::create([
+        "title" => $request->title,
+        "description"  => $request->description
+        ]);
+        return back();
     }
 
     /**
