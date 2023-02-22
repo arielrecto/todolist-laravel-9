@@ -1,5 +1,6 @@
 <x-layouts.app>
     <section class="text-gray-600 body-font">
+        <a href="{{route('edit', ['id' => $todo->id])}}">Edit</a>
         <div class="container px-5 py-24 mx-auto">
           <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-8 h-8 text-gray-400 mb-8" viewBox="0 0 975.036 975.036">
@@ -12,4 +13,5 @@
           </div>
         </div>
     </section>
+
 </x-layouts.app>
