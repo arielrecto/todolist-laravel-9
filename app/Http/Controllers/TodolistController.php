@@ -14,7 +14,8 @@ class TodolistController extends Controller
      */
     public function index()
     {
-        return view("home");
+        $todos = Todolist::all();
+        return view("home", compact(["todos"]));
     }
 
     /**
@@ -50,7 +51,9 @@ class TodolistController extends Controller
      */
     public function show($id)
     {
-        //
+        $todo = Todolist::find($id);
+
+        return view('components.pages.show', compact(["todo"]));
     }
 
     /**

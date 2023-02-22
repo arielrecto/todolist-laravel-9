@@ -17,3 +17,4 @@ use App\Http\Controllers\TodolistController;
 Route::get('/', [TodolistController::class, "index"])->name("index");
 Route::get('/create', [TodolistController::class, "create"])->name("create");
 Route::post('/store', [TodolistController::class, "store"])->name("store");
+Route::get('/todo/{id}', [TodolistController::class, "show"])->name("todo");
