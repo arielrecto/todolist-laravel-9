@@ -64,7 +64,8 @@ class TodolistController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todo = Todolist::find($id);
+        return view("components.pages.edit", compact(["todo"]));
     }
 
     /**
@@ -76,7 +77,14 @@ class TodolistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $todo = Todolist::find($id);
+        $todo->update([
+            "title" => $request->title,
+            "description" => $request->description
+
+
+        ]);
+        return redirect(route('index'));
     }
 
     /**
