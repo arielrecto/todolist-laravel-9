@@ -36,10 +36,12 @@ class TodolistController extends Controller
      */
     public function store(Request $request)
     {
+        // Query
         Todolist::create([
         "title" => $request->title,
         "description"  => $request->description
         ]);
+
         return back();
     }
 
